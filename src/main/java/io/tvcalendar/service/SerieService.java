@@ -24,6 +24,11 @@ public class SerieService {
         return serieRepository.save(this.toDomain(serieDTO));
     }
 
+    public Serie getByTitle(String title){
+        SerieDTO serieDTO = serieClient.getSerie(title);
+        return this.toDomain(serieDTO);
+    }
+
     private Serie toDomain(SerieDTO serieDTO){
         Serie serie = new Serie();
         serie.setGenre(serie.getGenre());
@@ -31,7 +36,7 @@ public class SerieService {
         serie.setName(serieDTO.getTitle());
         serie.setTitle(serieDTO.getTitle());
         serie.setPlot(serieDTO.getPlot());
-        serie.setPoster(serieDTO.getPlot());
+        serie.setPoster(serieDTO.getPoster());
         serie.setYear(serieDTO.getYear());
         serie.setReleased(serieDTO.getReleased());
         return serie;

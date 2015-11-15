@@ -29,56 +29,21 @@
             <label translate="tvcalendarApp.serie.title" for="field_title">Title</label>
             <input type="text" class="form-control" name="title" id="field_title"
                     ng-model="serie.title"
+                    ng-model-options="{updateOn: 'default blur', debounce: {default: 1000, blur: 300} }"
+                    ng-change="previewSerie()"
                     required />
             <div ng-show="editForm.title.$invalid">
                 <p class="help-block"
-                    ng-show="editForm.title.$error.required" translate="entity.validation.required">
+                    ng-show="editForm.title.$error.required"
+                    translate="entity.validation.required">
                     This field is required.
                 </p>
             </div>
         </div>
-        <div class="form-group">
-            <label translate="tvcalendarApp.serie.year" for="field_year">Year</label>
-            <input type="text" class="form-control" name="year" id="field_year"
-                    ng-model="serie.year"
-                     />
-        </div>
-        <div class="form-group">
-            <label translate="tvcalendarApp.serie.released" for="field_released">Released</label>
-            <input type="text" class="form-control" name="released" id="field_released"
-                    ng-model="serie.released"
-                     />
-        </div>
-        <div class="form-group">
-            <label translate="tvcalendarApp.serie.genre" for="field_genre">Genre</label>
-            <input type="text" class="form-control" name="genre" id="field_genre"
-                    ng-model="serie.genre"
-                     />
-        </div>
-        <div class="form-group">
-            <label translate="tvcalendarApp.serie.plot" for="field_plot">Plot</label>
-            <input type="text" class="form-control" name="plot" id="field_plot"
-                    ng-model="serie.plot"
-                     />
-        </div>
-        <div class="form-group">
-            <label translate="tvcalendarApp.serie.poster" for="field_poster">Poster</label>
-            <input type="text" class="form-control" name="poster" id="field_poster"
-                    ng-model="serie.poster"
-                     />
-        </div>
-        <div class="form-group">
-            <label translate="tvcalendarApp.serie.imdbRating" for="field_imdbRating">ImdbRating</label>
-            <input type="text" class="form-control" name="imdbRating" id="field_imdbRating"
-                    ng-model="serie.imdbRating"
-                     />
-        </div>
-        <div class="form-group">
-            <label translate="tvcalendarApp.serie.rating" for="field_rating">Rating</label>
-            <input type="text" class="form-control" name="rating" id="field_rating"
-                    ng-model="serie.rating"
-                     />
-        </div>
+
+         <div ng-show="serie.preview.poster">
+           <img ng-src="{{serie.preview.poster}}"/>
+          </div>
 
     </div>
     <div class="modal-footer">

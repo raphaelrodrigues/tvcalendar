@@ -121,6 +121,22 @@ public class SerieResource {
     }
 
     /**
+     * GET  /series/:id -> get the "id" serie.
+     */
+    @RequestMapping(value = "series/preview/{title}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<Serie> getSerieByTitle(@PathVariable String title) {
+        log.debug("REST request to get Serie : {}", title);
+        return Optional.ofNullable(serieService.getByTitle(title))
+            .map(serie -> new ResponseEntity<>(
+                serie,
+                HttpStatus.OK))
+            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
+    /**
      * DELETE  /series/:id -> delete the "id" serie.
      */
     @RequestMapping(value = "/series/{id}",
