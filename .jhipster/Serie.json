@@ -1,0 +1,59 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "title",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "year",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "released",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "genre",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "plot",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "poster",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "imdbRating",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "rating",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151115185601",
+    "dto": "no",
+    "pagination": "infinite-scroll"
+}
